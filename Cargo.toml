@@ -1,0 +1,40 @@
+[package]
+name = "enote"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "eNote"
+path = "src/main.rs"
+
+[dependencies]
+arboard = "3"
+base64 = "0.22"
+bcrypt = "0.19.3"
+chrono = "0.4.45"
+dirs = "6"
+eframe = "0.33"
+egui = "0.33"
+egui_extras = { version = "0.33", features = ["syntect"] }
+encoding_rs = "0.8"
+hmac = "0.12"
+md-5 = "0.10"
+p256 = { version = "0.14.0", features = ["ecdsa", "pem", "pkcs8", "getrandom"] }
+p384 = { version = "0.14.0", features = ["ecdsa", "pem", "pkcs8", "getrandom"] }
+p521 = { version = "0.14.0", features = ["ecdsa", "pem", "pkcs8", "getrandom"] }
+rand = "0.8"
+regex = "1"
+rfd = "0.15"
+rsa = { version = "0.9.10", features = ["sha2", "pem", "getrandom"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha1 = "0.10"
+sha2 = "0.10"
+similar = "2"
+unicode-segmentation = "1"
+
+[target."cfg(windows)".dependencies]
+winreg = "0.56.0"
+
+[target."cfg(windows)".build-dependencies]
+winresource = "0.1.31"
